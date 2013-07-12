@@ -30,24 +30,20 @@ public class LocalDb {
 	public DatabaseHelper(Context context) 
 	{
 		super(context, DATABASE_NAME,null,DATABASE_VERSION);
-		// TODO Auto-generated constructor stub
-		//Log.i("b","b");
+
 	}
 
 	@Override
-	public void onCreate(SQLiteDatabase db) {
-		// TODO Auto-generated method stub
+	public void onCreate(SQLiteDatabase db) 
+	{
 		db.execSQL(CallLog);
-		//Log.i("c","c");
-		
+			
 	}
-
 	@Override
-	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		// TODO Auto-generated method stub
+	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) 
+	{
 		db.execSQL("DROP TABLE IS EXITS "+ CallLog);
-		//Log.i("d","d");
-		
+
 	}
 	 
  }
@@ -60,7 +56,7 @@ public class LocalDb {
  {
      dbhelp = new DatabaseHelper(context);
      mdb = dbhelp.getWritableDatabase();
-    // Log.i("open","open");
+
 
      return this; 
  }
